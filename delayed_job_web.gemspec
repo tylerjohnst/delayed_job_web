@@ -53,43 +53,16 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.22"
   s.summary = "Web interface for delayed_job"
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<sinatra>, [">= 0.9.2"])
-      s.add_runtime_dependency(%q<haml>, [">= 3.1.3"])
-      s.add_runtime_dependency(%q<activerecord>, ["> 3.0.0"])
-      s.add_runtime_dependency(%q<delayed_job>, ["> 2.0.3"])
-      s.add_runtime_dependency(%q<rdoc>, [">= 0"])
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<rack-test>, [">= 0"])
-    else
-      s.add_dependency(%q<sinatra>, [">= 0.9.2"])
-      s.add_dependency(%q<haml>, [">= 3.1.3"])
-      s.add_dependency(%q<activerecord>, ["> 3.0.0"])
-      s.add_dependency(%q<delayed_job>, ["> 2.0.3"])
-      s.add_dependency(%q<rdoc>, [">= 0"])
-      s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<rack-test>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<sinatra>, [">= 0.9.2"])
-    s.add_dependency(%q<haml>, [">= 3.1.3"])
-    s.add_dependency(%q<activerecord>, ["> 3.0.0"])
-    s.add_dependency(%q<delayed_job>, ["> 2.0.3"])
-    s.add_dependency(%q<rdoc>, [">= 0"])
-    s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<rack-test>, [">= 0"])
-  end
+  s.add_dependency('sinatra', ">= 0.9.2")
+  s.add_dependency('haml', ">= 3.1.3")
+  s.add_dependency('mongoid', '2.4.8')
+  s.add_dependency('delayed_job', "> 2.0.3")
+  s.add_dependency('delayed_job_mongoid')
+  s.add_dependency('rdoc', ">= 0")
+  s.add_dependency('shoulda', ">= 0")
+  s.add_dependency('rack-test', ">= 0")
+  s.add_dependency('mongo', '1.6.2')
+  s.add_dependency('bson_ext', '~> 1.5')
 end
 

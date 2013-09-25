@@ -1,7 +1,8 @@
 require 'sinatra/base'
 require 'active_support'
-require 'active_record'
+require 'mongoid'
 require 'delayed_job'
+require 'delayed_job_mongoid'
 require 'haml'
 
 class DelayedJobWeb < Sinatra::Base
@@ -100,13 +101,13 @@ class DelayedJobWeb < Sinatra::Base
   def delayed_job_sql(type)
     case type
     when :enqueued
-      ''
+      {}
     when :working
-      'locked_at is not null'
+      { :locked_at.ne => nil }
     when :failed
-      'last_error is not null'
+      { :last_error.ne => nil }
     when :pending
-      'attempts = 0'
+      { :attempts => 0 }
     end
   end
 
